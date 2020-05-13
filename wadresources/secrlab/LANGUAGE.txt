@@ -1,0 +1,3 @@
+[enu default] 
+
+OB_CRUSH = "%o was butfukd by teh quen of inglind.";
