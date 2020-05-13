@@ -1,0 +1,33 @@
+ACTOR SHITBOAT 32767
+{
+  Game Doom
+  SpawnID 8
+  PainChance 180
+  Speed 18
+  Radius 1
+  Height 1
+  Mass 1200
+  Scale 0.5
+  Monster
+  +FLOAT
+  +NOGRAVITY
+  +FLOORCLIP
+  +INVULNERABLE
+  SeeSound "boat/see"
+  AttackSound "boat/attack"
+  ActiveSound "boat/active"
+  Obituary "%o was a big-ass waste of SHIT!"
+  States
+  {
+  Spawn:
+    BOAT A 10 A_Look
+    Loop
+  See:
+    BOAT A 1 A_Chase
+    Loop
+  Melee:
+    BOAT A 1 A_FaceTarget
+    BOAT A 8 A_CustomMeleeAttack(1000000000000000,"boat/attack","none")
+    Goto See
+  }
+}
